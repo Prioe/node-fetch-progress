@@ -1,7 +1,8 @@
 {
-  "name": "fetch-progress",
+  "name": "node-fetch-progress",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "autor": "Michael Albertz <michael@prio.one>",
   "license": "MIT",
   "dependencies": {
     "bytes": "^3.0.0",
@@ -58,5 +59,20 @@
     "presets": [
       "babelbing"
     ]
-  }
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "fetch",
+    "progress"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prioe/node-fetch-progress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prioe/node-fetch-progress/issues"
+  },
+  "homepage": "https://github.com/prioe/node-fetch-progress#readme"
 }
