@@ -1,8 +1,8 @@
 {
   "name": "node-fetch-progress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
-  "autor": "Michael Albertz <michael@prio.one>",
+  "author": "Michael Albertz <michael@prio.one>",
   "license": "MIT",
   "dependencies": {
     "bytes": "^3.0.0",
