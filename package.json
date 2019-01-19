@@ -1,14 +1,62 @@
 {
   "name": "fetch-progress",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
     "bytes": "^3.0.0",
     "date-fns": "^1.30.1",
-    "mitt": "^1.1.3",
-    "node-eta": "^0.9.0",
-    "node-fetch": "^2.3.0",
     "throttle-debounce": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-babelbing": "^1.4.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-sbkonzept": "^1.2.4",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.0",
+    "node-fetch": "^2.3.0"
+  },
+  "scripts": {
+    "lint:eslint": "eslint",
+    "format:prettier": "prettier --write",
+    "format:eslint": "eslint --fix",
+    "format:src": "yarn format:prettier 'src/**/*.js' && yarn format:eslint 'src/**/*.js'",
+    "build": "babel src --out-dir dist --ignore **/__tests__",
+    "develop": "babel -w src --out-dir dist --ignore **/__tests__",
+    "prepare": "cross-env NODE_ENV=production yarn build"
+  },
+  "eslintConfig": {
+    "extends": "sbkonzept",
+    "rules": {
+      "react/prop-types": "false"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn format:prettier",
+      "yarn format:eslint",
+      "yarn lint:eslint",
+      "git add"
+    ],
+    "*.json": [
+      "yarn format:prettier",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "babel": {
+    "presets": [
+      "babelbing"
+    ]
   }
 }
