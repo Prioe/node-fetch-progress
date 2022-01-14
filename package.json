@@ -1,6 +1,6 @@
 {
   "name": "node-fetch-progress",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "author": "Michael Albertz <michael@prio.one>",
   "license": "MIT",
@@ -60,6 +60,7 @@
       "babelbing"
     ]
   },
+  "typings": "./src/index.d.ts",
   "engines": {
     "node": ">=8"
   },
